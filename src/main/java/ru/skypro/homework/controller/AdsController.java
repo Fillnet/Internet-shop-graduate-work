@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import ru.skypro.homework.dto.*;
-import ru.skypro.homework.service.impl.AdsService;
+import ru.skypro.homework.service.impl.AdService;
 
 
 @Slf4j
@@ -20,7 +20,7 @@ import ru.skypro.homework.service.impl.AdsService;
 @RequestMapping("/ads")
 public class AdsController {
 
-    private final AdsService adsService;
+    private final AdService adsService;
 
     @GetMapping()
     @Operation(summary = "Получение всех объявлений")
@@ -36,8 +36,8 @@ public class AdsController {
             description = "Операция успешна")
     @ApiResponse(responseCode = "401",
             description = "Ошибка авторизации")
-    public ResponseEntity<Ad> addAd(@RequestPart CreateOrUpdateAd properties,
-                                    @RequestPart("image") MultipartFile image) {
+    public ResponseEntity<AdDTO> addAd(@RequestPart CreateOrUpdateAd properties,
+                                       @RequestPart("image") MultipartFile image) {
         return ResponseEntity.ok(adsService.addAd(properties, image));
     }
 

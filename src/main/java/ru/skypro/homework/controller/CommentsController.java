@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.skypro.homework.dto.Comment;
+import ru.skypro.homework.dto.CommentDTO;
 import ru.skypro.homework.dto.Comments;
 import ru.skypro.homework.dto.CreateOrUpdateComment;
 import ru.skypro.homework.service.impl.CommentsService;
@@ -41,8 +41,8 @@ public class CommentsController {
             description = "Ошибка авторизации")
     @ApiResponse(responseCode = "404",
             description = "Операция не найдена")
-    public ResponseEntity<Comment> addComment(@PathVariable(name = "id") Integer id,
-                                              @RequestBody CreateOrUpdateComment newComment) {
+    public ResponseEntity<CommentDTO> addComment(@PathVariable(name = "id") Integer id,
+                                                 @RequestBody CreateOrUpdateComment newComment) {
         return ResponseEntity.ok().body(commentsService.addComment(id, newComment));
     }
 

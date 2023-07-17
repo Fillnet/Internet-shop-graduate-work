@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import ru.skypro.homework.dto.NewPassword;
 import ru.skypro.homework.dto.UpdateUser;
-import ru.skypro.homework.dto.User;
+import ru.skypro.homework.dto.UserDTO;
 import ru.skypro.homework.service.impl.UserService;
 
 @CrossOrigin(value = "http://localhost:3000")
@@ -31,7 +31,7 @@ public class UsersController {
     @ApiResponse(responseCode = "401",
             description = "Ошибка авторизации")
     public ResponseEntity<?> getUser () {
-        User user = userService.getUser();
+        UserDTO user = userService.getUser();
             return ResponseEntity.ok().body(user);
     }
 

@@ -1,7 +1,7 @@
 package ru.skypro.homework.service.impl;
 
 import org.springframework.stereotype.Service;
-import ru.skypro.homework.dto.Comment;
+import ru.skypro.homework.dto.CommentDTO;
 import ru.skypro.homework.dto.Comments;
 import ru.skypro.homework.dto.CreateOrUpdateComment;
 
@@ -11,14 +11,14 @@ public class CommentsService {
         return null;
     }
 
-    public Comment addComment(Integer id, CreateOrUpdateComment text) {
+    public CommentDTO addComment(Integer id, CreateOrUpdateComment text) {
         return null;
     }
 
     public void deleteComment(Integer adId, Integer commentId) {
     }
 
-    public Comment updateComment(Integer adId, Integer commentId, CreateOrUpdateComment newComment) {
+    public CommentDTO updateComment(Integer adId, Integer commentId, CreateOrUpdateComment newComment) {
         return null;
     }
 }
